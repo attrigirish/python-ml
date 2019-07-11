@@ -1,0 +1,22 @@
+Part-1 
+
+Step 1: Loading Data
+Step 2: Analyze Data for Anomalies such as Empty Values
+Step 3: Derive New Features
+
+
+Part-2
+Step 1: Extract features from the data
+Step 2: Split the Data into Test and Train Data sets. (70/30)
+
+
+Part-3:
+Step 1: Create Model
+Step 2: Load Train data into model
+Step 3: Check model's accuracy with the help of test data
+
+Part-4:
+Step 1: Tweak Model to achieve higher accuracy/results.
+
+Part 5
+Step 1: Use model in real application

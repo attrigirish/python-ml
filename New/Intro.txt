@@ -1,0 +1,122 @@
+What is Machine Learning?
+
+Machine Learning is a field of computer science where a machine is provided with the input and output data and it creates a program for itself.
+
+Advantages of Machine Learning
+- Has the ability to process the information like human beings.
+- Manual intervention or modifications are not required, if something changes in the environment.
+
+
+
+Artificial Intelligence V/s Machine Learning
+
+
+Artifical Intelligence > Machine Learning > Deep Learning
+
+
+Some Fields of Artificial Intelligence
+
+- Vision
+- Natural Language Processing
+
+
+
+Types of Machine Learning 
+
+- Supervised Learning
+	- Regression
+	- Classification
+- Unsupervised Learning
+	- Clustering
+	- Dimensionality Reduction
+
+
+
+
+Hardware Requirements
+
+1. Classic Machine Learning
+	RAM : 4-8 GB
+	Processor : I3, I5, I7
+	GPU : No
+
+2. Deep Learning 
+	RAM : 8-16 GB
+	Process : I5, I7
+	GPU : Yes
+
+
+
+Machine Learning Libraries
+
+- Data Processing and Extraction Libraries
+	Numpy
+	Scipy
+	Pandas
+
+- Visualization Libraries
+	Matplotlib
+
+- Classic Machine Learning
+	Scikit-Learn
+
+- Deep Learning Libraries
+	Tensorflow
+	Keras
+	Theano
+	PyTorch
+
+
+Recommended Tools and Software Packages
+
+	- Pycharm
+	- Spyder
+	- Jupyter Notebooks
+		or
+	- Anaconda Software Stack
+
+
+Online Platform for Machine Learning
+	
+	- Google Colab
+
+
+
+
+
+
+Numpy (Numerical Python) (pip install numpy)
+
+- Numpy is a high performance multi-dimensional array.
+
+
+
+#Creating a numpy array
+
+import numpy as np
+
+#1D Array
+arr1 = np.array([11,22,33,44,55])
+
+#2D Array
+arr2 = np.array([ [11,22,33],[44,55,66],[77,88,99] ])
+
+
+
+#Dimensions of a Numpy Array
+
+print(arr1.ndim)		#1
+print(arr2.ndim)		#2
+
+
+#Shape of a Numpy Array
+print(arr1.shape)		#(3,)
+print(arr2.shape)		#(3,3)
+
+
+#Changing the Shape of an Array
+arr2.shape=(9,)
+
+
+
+
