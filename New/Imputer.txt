@@ -1,0 +1,64 @@
+Handling Null/NaN data in a dataset.
+
+
+Filling Missing Values with Mean data.
+
+
+s1=pd.Series([34,65,34,None,43,54,None,23,54,65,34,None])
+#Mean
+mn=s1.mean()
+#Fill
+s1=s1.fillna(mn)
+
+print(s1)
+
+
+
+Imputer
+--------
+
+For various reasons, many real world datasets contain missing values, often encoded as blanks, NaNs or other placeholders. Such datasets however are incompatible with scikit-learn estimators which assume that all values in an array are numerical, and that all have and hold meaning. A basic strategy to use incomplete datasets is to discard entire rows and/or columns containing missing values. However, this comes at the price of losing data which may be valuable (even though incomplete). A better strategy is to impute the missing values, i.e., to infer them from the known part of the data.
+
+
+sklearn.impute.SimpleImputer
+-----------------------------
+
+The SimpleImputer class provides basic strategies for imputing missing values. Missing values can be imputed with a provided constant value, or using the statistics (mean, median or most frequent) of each column in which the missing values are located.
+
+
+#Mean
+
+from sklearn.impute import SimpleImputer
+import pandas as pd
+import numpy as np
+
+s1=np.array([34,65,34,None,43,54,None,23,54,65,34,None])
+s1.shape=(-1,1)
+
+imp = SimpleImputer(missing_values=np.nan, strategy='mean')
+imp.fit(s1)		
+
+
+#Filling Data
+s1=imp.transform(s1)
+
+print(s1)
+
+
+#Most Frequent
+
+from sklearn.impute import SimpleImputer
+import pandas as pd
+import numpy as np
+
+s1=np.array([34,65,34,None,43,54,None,23,54,65,34,None])
+s1.shape=(-1,1)
+
+imp = SimpleImputer(strategy='most_frequent')
+imp.fit(s1)		
+
+
+#Filling Data
+s1=imp.transform(s1)
+
+print(s1)
