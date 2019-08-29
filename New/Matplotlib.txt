@@ -1,0 +1,127 @@
+matplotlib : Visualizing Data
+
+Matplotlib is an amazing visualization library in Python for 2D plots of arrays. Matplotlib is a multi-platform data visualization library built on NumPy arrays and designed to work with the broader SciPy stack. 
+
+
+To install matplotlib
+----------------------
+
+>pip install matplotlib
+
+
+
+
+
+1. Line charts
+
+
+from matplotlib import pyplot as plt
+
+x=[1,2,3,4,5]
+y=[2,3,4,5,6]
+
+
+plt.plot(x,y)  			#Prints a line chart
+plt.show()
+
+
+Displaying multiple series in a chart.
+--------------------------------------
+
+years=['2015','2016','2017']
+pitampura=[5456,6545,6576]
+rohini=[5212,4650,7430]
+shalimar=[6403,7893,8430]
+
+plt.plot(years,pitampura)
+plt.plot(years,rohini)
+plt.plot(years,shalimar)
+plt.show()
+
+
+
+Displaying Legends in the chart
+--------------------------------
+
+plt.plot(years,pitampura,label='Pitampura')
+plt.plot(years,rohini,label='Rohini')
+plt.plot(years,shalimar,label='Shalimar Bagh')
+plt.legend()
+
+
+
+Customizing Charts
+------------------
+
+plt.plot(years,pitampura,label='Pitampura', c='r')
+plt.plot(years,rohini,label='Rohini', c='b')
+plt.plot(years,shalimar,label='Shalimar Bagh', c='g')
+
+
+Enabling Gridlines
+-------------------
+
+plt.grid()
+
+
+
+
+
+2. Scatter Chart
+-----------------
+
+plt.scatter(x,y)
+
+
+3. Bar Chart
+
+plt.bar(x,y)
+
+
+4. Pie Chart
+
+plt.pie(pitampura, labels=years)
+plt.show()
+
+
+Exploding Data Points
+---------------------
+
+plt.pie(pitampura, labels=years, explode=(.1,.1,.1))
+
+
+Displaying Percentage Values
+-----------------------------
+
+plt.pie(pitampura, labels=years, explode=(.1,.1,.1), autopct='%.2f%%')
+
+
+5. Histograms
+
+A histogram is a graphical display of data using bars of different heights. In a histogram, each bar groups numbers into ranges. Taller bars show that more data falls in that range. A histogram displays the shape and spread of continuous sample data.
+
+kohli=[12,54,34,87,98,124,39,102,57,87,34,68,90,48,26,92,48,63,20,50]
+bins=[0,25,50,75,100,125,150,175,200]
+
+plt.hist(kohli, bins=bins, rwidth=.9)
+
+
+
+6. Subplots
+
+fig, sp = plt.subplots(nrows=1, ncols=3)
+
+sp[0].pie(pitampura, labels=years, autopct='%.2f%%')
+sp[1].pie(rohini, labels=years, autopct='%.2f%%')
+sp[2].pie(shalimar, labels=years, autopct='%.2f%%')
+
+plt.show()
+
+
+
+
+
+
+
+
+

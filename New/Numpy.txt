@@ -1,0 +1,198 @@
+numpy
+-----
+
+numpy provides a highly efficiently multi-dimensional arrays.
+
+
+NumPy is the fundamental package for scientific computing with Python. It contains among other things:
+
+1. a powerful N-dimensional array object
+2. sophisticated functions
+3. useful linear algebra, Fourier transform, and random number capabilities
+
+
+To Install numpy
+-----------------
+
+>pip install numpy
+
+
+
+1. numpy.array(data,dtype=None) :  Creates a numpy array
+
+
+E.g.
+
+import numpy as np
+
+odarray=np.array([1,2,3,4,5])
+print(odarray)
+
+
+tdarray=np.array([[1,2,3],[4,5,6],[7,8,9]])
+print(tdarray)
+
+
+2. ndim : Dimensions of an array
+
+print(odarray.ndim)
+print(tdarray.ndim)
+
+
+3. shape : set or get the shape of an array
+
+print(odarray.shape)			#print the shape of the array
+print(tdarray.shape)		
+
+
+tdarray.shape=(9,)				#change the shape of the array
+print(tdarray.shape)
+print(tdarray.ndim)
+print(tdarray)
+
+
+
+Assignment: for the given array perform the below mentioned operations.
+
+	arr=np.array( [ [1,2,3],[3,4,5],[5,6,7],[7,8,9] ] )
+
+	A. Convert the array to a three dim array of size 2X2X3
+	B. Convert the array to a one dim array of size 12
+
+
+
+Arithmetic operations on np array
+---------------------------------
+
+arr=np.array([1,2,3,4,5])
+
+arr=arr*5
+print(arr)
+arr=arr+5
+print(arr)
+arr=arr/5
+print(arr)
+
+
+arr1=np.array([1,2,3,4,5])
+arr2=np.array([5,4,3,2,1])
+
+arr3=arr1+arr2
+print(arr3)
+arr4=arr1*arr2
+print(arr4)
+
+
+Aggregate Functions
+-------------------
+
+arr=np.array([1,2,3,4,5])
+
+sum=arr.sum()
+max=arr.max()
+min=arr.min()
+avg=arr.mean()
+
+
+
+Creating Sample Arrays/Dummy Arrays : Generating numpy arrays
+
+1. ones(shape, dtype=None) : Generates a numpy array of the specified shape with all values filled with 1. 
+
+
+arr=np.ones(shape=(10*10*10))
+
+
+2. zeros(shape, dtype=None) : Generates a numpy array of the specified shape with all values filled with 0.
+
+arr=np.zeros(shape=(10*10*10))
+
+
+3. arange(start=0, stop, step=1, dtype=None) : arange returns evenly spaced values within a given interval. The values are generated within the half-open interval '[start, stop)'.
+
+arr=np.arange(1,101)
+arr.shape=(10,10)
+
+4. linspace(start,stop,num=50,dtype=None) : linspace returns evenly spaces values within the given interval. The values are generated within the fully-closed interval [start, stop]
+
+arr=np.linspace(1,10,100)
+
+
+
+Numpy Dtype
+------------
+
+1. np.int
+2. np.int16
+3. np.int32
+4. np.int64
+5. np.float
+6. np.float32
+7. np.float64
+8. np.nan
+9. np.object
+
+
+
+e.g.
+
+arr=np.array([1,2,3,4,5])
+print(arr.dtype)				#np.int64
+
+arr=np.array([32760,32770,32780], dtype=np.int16)
+print(arr)
+
+
+
+Custom Data Types
+
+dt = np.dtype([('country', 'U20'), ('density', 'i4'), ('area', 'i4'), ('population', 'i4')])
+
+population_table = np.array([
+    ('Netherlands', 393, 41526, 16928800),
+    ('Belgium', 337, 30510, 11007020),
+    ('United Kingdom', 256, 243610, 62262000),
+    ('Germany', 233, 357021, 81799600),
+    ('Liechtenstein', 205, 160, 32842),
+    ('Italy', 192, 301230, 59715625),
+    ('Switzerland', 177, 41290, 7301994),
+    ('Luxembourg', 173, 2586, 512000),
+    ('France', 111, 547030, 63601002),
+    ('Austria', 97, 83858, 8169929),
+    ('Greece', 81, 131940, 11606813),
+    ('Ireland', 65, 70280, 4581269),
+    ('Sweden', 20, 449964, 9515744),
+    ('Finland', 16, 338424, 5410233),
+    ('Norway', 13, 385252, 5033675)],
+   	dtype=dt)
+
+
+
+arr['s1']+arr['s2']+arr['s3']
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
