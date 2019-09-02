@@ -1,3 +1,16 @@
+Handling Text Data
+------------------
+
+s=pd.Series(["Medium","Large","Medium","Small","Medium","Small","Small","Large"])
+s.replace('Small',1, inplace=True)
+s.replace('Medium',2, inplace=True)
+s.replace('Large','3, inplace=True)
+print(s)
+
+
+
+
+
 LabelEncoder
 -------------
 

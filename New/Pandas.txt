@@ -1,0 +1,196 @@
+Pandas
+
+Pandas is used for data manipulation, analysis and cleaning. Python pandas is well suited for different kinds of data, such as:
+*   Tabular data with heterogeneously-typed columns
+*   Ordered and unordered time series data
+*   Arbitrary matrix data with row & column labels
+*   Unlabelled data
+*   Any other form of observational or statistical data sets
+
+
+Pandas Data Structures
+1. Series : A pandas series is a single row of data where elements could be labelled or unlabelled.
+
+2. DataFrame : A pandas dataframe is a table like structure where both column and rows can have labels. A pandas dataframe is well suited for most data analysis works. 
+
+
+
+Pandas Series:
+
+Syntax:
+
+pandas.Series(data=None, index=None, dtype=None)
+
+
+import pandas as pd
+
+s1=pd.Series([543.43,765.45,365.65,654.20])				#Unlabelled Data
+print(s1)
+
+
+s1=pd.Series([543.43,765.45,365.65,654.20], index=[2014,2015,2016,2017]) #Laelled
+print(s1)
+
+
+
+
+Performing Arithmetic Operations on Pandas series:
+
+print("Tax : ")
+print(s1*.18)
+
+
+Accessing Elements in a Pandas Series:
+
+#Unlabeled Series
+print(s1[2])
+
+#Labelled Series
+print(s1[2015])
+
+
+Filtering Data in a Pandas Series 
+
+#For Values
+print(s1[s1>600])
+
+
+#For Label
+print(s1[ [2015,2016] ])
+
+
+Aggregate Function on a Pandas Series
+print("Sum : ", s1.sum())
+print("Max : ", s1.max())
+print("Min : ", s1.min())
+print("Average : ", s1.mean())
+
+
+#Performing Operations on Multiple Data Serieses
+
+labels=[2014,2015,2016,2017,2018]
+pitampura=pd.Series([54.54,65.87,34.58,62.30,81.25], index=labels)
+rohini=pd.Series([47.34,76.45,49.34,67.50,65.76], index=labels)
+shahdra=pd.Series([54.76,45.89,67.45,87.45,76.45]), index=labels)
+
+print( pitampura+rohini+shadra )
+
+
+Questions:
+A. Calculate the sum for years 2015 and 2016 for all stores.
+B. Find the maximum combined sales produced by pitampura and shahdra together.
+
+Method 1
+
+result=(pitampura+rohini+shahdra)[[2015,2016]]
+print(result)
+
+Method 2
+result=pitampura[[2015,2016]]+rohini[[2015,2016]]+shahdra[[2015,2016]]
+
+
+Pandas Serieses from Dictionaries
+
+sales={ '2015':43.65, '2016':54.76, '2017':87.34, '2018':58.45, '2019':43.76 }
+s1=pd.Series(sales)
+print(s1)
+
+
+Pandas Dataframes
+
+The underlying idea of a DataFrame is based on spreadsheets. We can see the data structure of a DataFrame as tabular and spreadsheet-like. A DataFrame logically corresponds to a "sheet" of an Excel document. A DataFrame has both a row and a column index.
+Like a spreadsheet or Excel sheet, a DataFrame object contains an ordered collection of columns. Each column consists of a unique data typye, but different columns can have different types, e.g. the first column may consist of integers, while the second one consists of boolean values and so on.
+
+There is a close connection between the DataFrames and the Series of Pandas. A DataFrame can be seen as a concatenation of Series, each Series having the same index, i.e. the index of the DataFrame.
+
+
+DataFrame(data=None, index=None, columns=None, dtype=None, copy=False)
+
+
+#Method 1 : Labelled DataFrames
+
+df=pd.DataFrame( [ [54,76,45,87], [45,76,45,23], [89,54,76,40] ], index=['Pitampura','Rohini','Shahdra'], columns=[2014,2015,2016,2017] )
+print(df)
+
+
+#Method 2 : Unlabelled DataFrames
+
+df=pd.DataFrame([[54,76,45,87], [45,76,45,23], [89,54,76,40]])
+print(df)
+
+df.index=['Pitampura','Rohini','Shahdra']
+df.columns=[2014,2015,2016,2017]
+print(df)
+
+#Method 3 : Pandas Dataframes using Serieses
+
+pitampura=pd.Series([54.54,65.87,34.58,62.30,81.25])
+rohini=pd.Series([47.34,76.45,49.34,67.50,65.76])
+shahdra=pd.Series([54.76,45.89,67.45,87.45,76.45]))
+
+# concat( *data, axis=0 )				#axis=0 : Row , axis=1 : Column
+df=pd.concat([pitampura, rohini, shahdra], axis=1)
+print(df)
+
+
+#Method 4 : Pandas Dataframes using Dictionaries
+
+sales={ 
+		'pitampura':{'2014':43.54,'2015':54.34,'2016':43.65,'2017':98.45}, 
+		'rohini':{'2014':43.54,'2015':54.34,'2016':43.65,'2017':98.45},
+		'shahdra':{'2014':43.54,'2015':54.34,'2016':43.65,'2017':98.45} 
+	}
+
+df=pd.DataFrame(sales)
+
+
+
+
+
+Accessing DataFrame Elements
+
+# To Access a single column/series
+print(df['Shahdra'])
+
+
+# To Access a single row
+print(df.loc['2016'])				#Error
+
+
+# To Access a single element
+df['Pitampura']['2015']
+or
+df.loc['2015']['Pitampura']
+
+
+#Filtering Columns
+df[ ['Pitampura','Rohini'] ]
+
+#Filtering Rows
+df.loc[ ['2015','2016'] ]
+
+
+#Adding New Row
+df.loc['2018']=[43,65,65]
+
+#Adding New Column
+df['kohat']=[43,65,23,76,58]
+
+
+
+
+Questions:
+
+
+
+
+
+
+
+
+
+
+
+
+
+

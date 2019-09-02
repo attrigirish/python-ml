@@ -1,0 +1,8 @@
+Scikit-Learn
+
+Scikit-learn is the amongst the most popular python libraries. Scikit-learn or sklearn is used by both the Machine Learning experts and Data Analysts or Scientists equally. Sciket-learn could be used for perform various types of operations or applying various applications on the given dataset. 
+
+To Install Scikit-Learn
+-----------------------
+
+pip isntall scikit-learn
